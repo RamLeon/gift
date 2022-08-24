@@ -1,0 +1,29 @@
+<!--p>resultado works!</p-->
+
+<!--ul>
+    <li *ngFor="let itbus of getResultados">
+         {{itbus.title}}
+    </li>
+
+</ul-->
+<!--Realiza un ngFor, para desplegar el arreglo-->
+<div class="row">
+    <div class="col-md-4 col-md-6"
+    *ngFor="let itbus of getResultados"
+    >
+        <div class="card">
+    <!--Despliega un campo imágen de la structura-->
+            <img [src]="itbus.images.downsized_medium.url" 
+                 [alt]="itbus.images.downsized_medium.url"
+                 class="card-img-top"
+                 >
+            <div class="card-body">
+                <p class="card-text">
+    <!--Despliega el título de la structura-->                    
+                    {{itbus.title}}
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>

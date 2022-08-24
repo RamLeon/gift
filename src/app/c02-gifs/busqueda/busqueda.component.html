@@ -1,0 +1,28 @@
+<!--p>busqueda works!</p-->
+<!--
+      [] ==> permite sacar datos del ts
+      () ==> permite ejecutar comandos TS
+      [()] ==> ngModel, después lo utilizaremos, 
+              doble sentido desde el html a ts y del ts al html
+     @ViewChild('txBusqueda') ==> enlaza una variable ts al html
+               pero solo en un sentido
+-->
+<div class="col">
+    <h5>Buscar:</h5>
+<!--
+    ayudaForm ==> Variable en el TS, para desplegar como placeHolder
+    (keyup) ==> Método que ejecutará cada vez que presione una tecla
+    (keyup.shift.enter) ==> Cuando presione shif + enter
+                            pasamos como parametro txBusqueda.value
+    (keyup.enter) ==> Cuando presione enter
+-->
+    <input type="text" 
+           class="form-control"
+           [placeholder]="ayudaForm"
+           (keyup)="keyTeclas($event)"
+
+           (keyup.shift.enter)="keyShiftEnter(txBusqueda.value)"
+           #txBusqueda
+           
+           (keyup.enter)="keyEnter()"
+          >

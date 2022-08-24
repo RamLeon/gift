@@ -1,0 +1,26 @@
+<!--p>sidebar works!</p-->
+<!-- class hojas de estylo, sin embargo aún no instalamos bootstrap-->
+<div id="sidebar" class="bg-dark border-right p-3">
+    <h3 class="text-light">
+      Ramon
+    </h3> 
+    <hr class="text-white">
+    <!--div class="list-group list-reset">
+      <a href="#"
+          class="list-group-item list-group-item-action"
+          >Dasboard</a>
+    </div-->
+    <div class="list-group list-reset">
+      <!-- getHistrorial, es un método Getter, que devuelve el historial
+          Cuando realiza un click llama al método buscar
+        , y envia la palabra itBus (palabra)-->
+      <a class="list-group-item list-group-item-action"
+          *ngFor="let itBus of getHistorial"
+          (click)="buscar(itBus)"
+          >
+          <!--{{ itBus | titlecase }}   mostrar el pipe-->
+          <!--despliegue de la palabra-->
+          {{ itBus }}
+        </a>
+    </div>
+  </div>
